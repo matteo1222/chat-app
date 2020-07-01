@@ -1,0 +1,45 @@
+:root {
+    --black-coffee: hsla(320, 18%, 20%, 1);
+    --independence: hsla(253, 19%, 40%, 1);
+    --glaucous: hsla(225, 36%, 67%, 1);
+    --royal-blue-light: hsla(235, 59%, 84%, 1);
+    --mint-cream: hsla(160, 8%, 89%, 1);
+}
+
+.infoBar {
+    width: 100%;
+    height: 40px;
+    background: var(--glaucous);
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.onlineIcon {
+    width: 10px;
+    height: 10px;
+    margin-left: 20px;
+
+
+}
+
+.closeIcon {
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+}
+
+.closeIcon:hover {
+    cursor: pointer;
+}
+
+.room {
+    text-shadow: 1px 1px white;
+    font-size: 25px;
+
+
+
+}

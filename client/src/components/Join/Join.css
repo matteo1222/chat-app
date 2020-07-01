@@ -10,6 +10,7 @@
 
     font-family: 微軟正黑體;
     font-weight: bold;
+
     
 }
 
@@ -37,6 +38,7 @@ html, body {
     background: var(--mint-cream);
     border-radius: 20px;
     color: var(--independence);
+    position: relative;
     box-shadow: 
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -47,17 +49,29 @@ html, body {
 
 }
 
-.heading {
-    font-size: 60px;
 
-}
-
-.heading::after {
+.decorationShape {
     content: '';
     background: var(--glaucous);
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 70px;
+    position: relative;
+    top: 0px;
+    left: -10px;
+    border-radius: 20px 20px 20px 0;
+    box-shadow: 5px 5px white;
 }
+
+.heading {
+    font-size: 60px;
+    position: relative;
+    top: -65px;
+    left: 10px;
+    z-index: 10;
+    text-shadow: 2px 2px white;
+
+}
+
 
 .joinInnerContainer {
     width: 300px;
@@ -69,25 +83,49 @@ html, body {
     position: relative;
 }
 
+.joinLabel {
+    font-size: 30px;
+    text-shadow: 3px 3px white;
+    display: flex;
+    align-items: baseline;
+    margin-top: 0px;
+    padding: 5px;
+
+}
+
 .joinInput {
-    margin: 10px;
+    margin: 5px;
+    width: 230px;
+    height: 30px;
     border: none;
     padding: 5px;
     border-radius: 2px;
     margin-left: 20px;
-
+    border: 2px solid var(--independence);
+    box-shadow: 3px 3px var(--independence);
+    outline: none;
 }
 
+
+
 .button {
-    margin-top: 20px;
+    margin-top: 40px;
     border: none;
     padding: 10px 15px 10px 15px;
     border-radius: 20px;
+    font-size: 30px;
+    color: var(--independence);
     background: var(--glaucous);
-    box-shadow: 3px 3px 10px var(--independence);
+    text-shadow: 1px 1px white;
+    box-shadow: 5px 5px white;
+    transition: 0.5s;
+    outline: none;
 
 }
 
 .button:hover {
     cursor: pointer;
+    box-shadow: none;
+    transition: 0.5s;
+    transform: translate(3px, 3px);
 }

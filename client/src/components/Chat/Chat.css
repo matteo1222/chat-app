@@ -1,0 +1,73 @@
+:root {
+    --black-coffee: hsla(320, 18%, 20%, 1);
+    --independence: hsla(253, 19%, 40%, 1);
+    --glaucous: hsla(225, 36%, 67%, 1);
+    --royal-blue-light: hsla(235, 59%, 84%, 1);
+    --mint-cream: hsla(160, 8%, 89%, 1);
+    --lightIndependence: hsla(253, 19%, 69%, 1);
+}
+
+
+.chatOuterContainer {
+    width: 400px;
+    height: 500px;
+
+    background: var(--mint-cream);
+    border-radius: 20px;
+    color: var(--independence);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    box-shadow: 
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+
+.scrollToBottom {
+    box-sizing: border-box;
+    width: 100%;
+    height: 430px;
+    position: absolute;
+    padding: 10px;
+    top: 30px;
+    
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--mint-cream);
+    
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--lightIndependence);
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+
+  }
+
+
+.chatInnerContainer {
+    margin-top: 50px;
+    width: 100%;
+    height: 100;
+
+
+}
+

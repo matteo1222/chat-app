@@ -10,12 +10,16 @@ function Join() {
 
     return (
         <div className="joinOuterContainer">
-            <h3 className="heading">Join</h3>
+            
+            <div className="decorationShape">
+                <h3 className="heading">Join</h3>
+            </div>
             <div className="joinInnerContainer">
-                <div>Name
+                <div className="joinLabel">
                     <input className="joinInput" name="name" type="text" placeholder="Name" onChange={(event) => setName(event.target.value)}></input>
                 </div>
-                <div>Room
+                <div className="cutLine"></div>
+                <div className="joinLabel">
                     <input className="joinInput" name="room" type="text" placeholder="Room" onChange={(event) => setRoom(event.target.value)}></input>
                 </div>
                 <Link onClick={event => ( !name || !room ) ? event.preventDefault() : null } to={`/chat?name=${name}&room=${room}`}>

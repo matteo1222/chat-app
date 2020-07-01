@@ -1,0 +1,76 @@
+:root {
+    --black-coffee: hsla(320, 18%, 20%, 1);
+    --independence: hsla(253, 19%, 40%, 1);
+    --glaucous: hsla(225, 36%, 67%, 1);
+    --royal-blue-light: hsla(235, 59%, 84%, 1);
+    --mint-cream: hsla(160, 8%, 89%, 1);
+}
+
+
+.messageContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+
+
+.right {
+    
+    margin-left: auto;
+    color: var(--independence);
+    
+
+}
+
+.left {
+    
+}
+
+
+.sentText {
+    
+    
+   
+
+}
+
+.messageBox {
+    margin: 5px 10px 5px 10px;
+    padding: 0px 15px 0px 15px;
+    max-width: 280px;
+    word-wrap:break-word;
+}
+
+.justifyEnd {
+
+}
+
+.justifyStart {
+
+}
+
+.messageText {
+
+}
+
+.backgroundBlue {
+    background: var(--glaucous);
+    border-radius: 15px 15px 0px 15px;
+    color: white;
+    box-shadow: 4px 4px var(--independence);
+    position: relative;
+    
+
+}
+
+.backgroundLight {
+    background: var(--royal-blue-light);
+    border-radius: 15px 15px 15px 0px;
+    box-shadow: -4px 4px var(--independence);
+
+}
+
+

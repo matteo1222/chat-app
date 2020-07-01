@@ -1,13 +1,22 @@
 import React, {useEffect, useState} from "react";
 import queryString from "query-string";
 import io from "socket.io-client";
+import InfoBar from "../InfoBar/InfoBar";
+import InputBar from "../InputBar/InputBar";
+import Messages from "../Messages/Messages";
+import ScrollToBottom from "react-scroll-to-bottom";
+import './Chat.css';
 
 let socket;
 
 function Chat( {location} ) {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
-    const ENDPOINT = 'localhost:5000';
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
+
+
+    const ENDPOINT = 'https://react-chat-application-po.herokuapp.com/';
 
     useEffect(() => {
         const {name, room} = queryString.parse(location.search);
@@ -16,17 +25,64 @@ function Chat( {location} ) {
         setName(name);
         setRoom(room);
         
+        socket.emit('join', {name, room}, (error) => {
+            if(error) {
+                alert(error);
+            }
+        });
+
+        return () => {
+            socket.emit('disconnect');
+            socket.off();
+
+        };
 
     }, [ENDPOINT, location.search]);
+
+    useEffect(() => {
+        socket.on('message', (message) => {
+            const time1 = Date.now();
+            
+            setMessages([...messages, message]);
+            const time2 = Date.now();
+            console.log(time2 - time1);
+        });
+
+        return function removeEventListener() {
+            socket.off('message');
+        };
+
+    }, [messages]);
+
+    const sendMessage = (event) => {
+        event.preventDefault();
+
+        if (message) {
+            socket.emit('sendMessage', message, () => setMessage(''));
+        }
+    };
+
+
+
 
 
 
     return (
-        <div>
-            <h3>Chat</h3>
-            <p>{name}</p>
-            <p>{room}</p>
+        <div className="chatOuterContainer">
+            <InfoBar room={room} />
+            <ScrollToBottom className="scrollToBottom">
+                <div className="chatInnerContainer">
+                    <Messages messages={messages} name={name} />
+                    
+                </div>
+            </ScrollToBottom>
+            <InputBar 
+                message={message} 
+                setMessage={setMessage} 
+                sendMessage={sendMessage} 
+            />
         </div>
+        
     );
 }
 

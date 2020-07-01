@@ -1,0 +1,61 @@
+:root {
+    --black-coffee: hsla(320, 18%, 20%, 1);
+    --independence: hsla(253, 19%, 40%, 1);
+    --glaucous: hsla(225, 36%, 67%, 1);
+    --royal-blue-light: hsla(235, 59%, 84%, 1);
+    --mint-cream: hsla(160, 8%, 89%, 1);
+}
+
+
+.inputForm {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.chatInput {
+    min-height: 35px;
+    margin-top: 100px;
+    width: 80%;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+
+ 
+}
+
+.emojiButton {
+    border: none;
+    height: 37px;
+    outline: none;
+    background: white;
+    color: var(--independence);
+    position: absolute;
+    right: 80px;
+
+}
+
+.emojiButton:hover {
+    cursor: pointer;
+}
+
+.sendButton {
+ 
+    height: 37px;
+    width: 20%;
+    border: none;
+    color: var(--black-coffee);
+    background: var(--glaucous);
+    position: absolute;
+    right: 0px;
+ 
+
+}
+
+.sendButton:hover {
+    cursor: pointer;
+}
